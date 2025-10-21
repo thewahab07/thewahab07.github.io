@@ -1,0 +1,37 @@
+---
+const { variant } = Astro.props;
+---
+
+<style>
+    button {
+        border: none;
+        padding: 8px 18px;
+        border-radius: 0.2rem;
+        font-size: medium;
+        cursor: pointer;
+        margin-inline-end: 0.4rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Inter", sans;
+        transition: 0.2s ease;
+    }
+    button:hover {
+        opacity: 0.8;
+    }
+    .primary {
+        background-color: var(--primary);
+        color: white;
+    }
+
+    /* @media (max-width: 768px) {
+        button {
+            padding: 0.6rem 1rem;
+            font-size: small;
+        }
+    } */
+</style>
+
+<button class:list={[{ primary: variant === "primary" }]}>
+    <slot />
+</button>

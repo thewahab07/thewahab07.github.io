@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  links: { text: string; href: string }[];
+}
+const { title, subtitle, description, links, image } = Astro.props;
+---
+
+<div class="container">
+  <div class="header">
+    <img src={image} alt="" />
+    <div class="title">
+      <h3>{title}</h3>
+      <p>{subtitle}</p>
+    </div>
+  </div>
+  <div class="details">
+    <p>
+      {description}
+    </p>
+  </div>
+  <div class="footer">
+    {
+      links.map((link) => {
+        return (
+          <a href={link.href} target="_blank">
+            {link.text}
+          </a>
+        );
+      })
+    }
+  </div>
+</div>
+
+<style>
+  .container {
+    padding: 2% 1.2%;
+    border-radius: 0.8rem;
+    max-width: 600px;
+    margin-bottom: 1rem;
+    color: var(--color);
+  }
+  .container:hover {
+    background-color: var(--light-bg);
+  }
+
+  .header {
+    display: flex;
+  }
+  .header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .header .title {
+    margin-inline-start: 1rem;
+  }
+  .header .title h3,
+  .header .title p {
+    margin: 0;
+    color: var(--color);
+  }
+  .header .title p {
+    color: var(--text-light);
+    font-size: small;
+  }
+  .details {
+    color: var(--text-light);
+    }
+  .footer a {
+    border: none;
+    background-color: transparent;
+    color: var(--primary);
+    font-size: medium;
+    padding-inline-start: 0;
+    text-decoration: none;
+    margin-inline-end: 1rem;
+  }
+</style>

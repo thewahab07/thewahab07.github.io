@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About Me - Abdul Wahab">
+  <main>
+    <p>
+      I’m a 17-year-old student with a strong passion for computer science and
+      software development. For the past 3 years, I’ve been learning programming
+      and building projects that bring ideas to life. My main focus is front-end
+      development with Next.js, TypeScript, and React Native.
+    </p>
+    <p>
+      Along the way, I’ve created projects like a Twitter clone, a news app, and
+      most recently Flash — a flashcards app that is live on the Google Play
+      Store. Every project I build pushes me to learn new technologies and
+      improve my problem-solving skills.
+    </p>
+    <p>
+      I’m excited to keep growing as a developer and explore opportunities where
+      I can contribute, learn, and take my skills to the next level.
+    </p>
+    <p>Besides programming, I am a fan of gaming, movies and chess.</p>
+  </main>
+</Layout>
+
+<style>
+  p {
+    max-width: 90ch;
+    color: var(--color);
+  }
+  p a {
+    color: var(--primary);
+  }
+  @media (max-width: 450px) {
+    p {
+      font-size: small;
+    }
+  }
+</style>

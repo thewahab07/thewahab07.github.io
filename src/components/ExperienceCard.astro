@@ -1,0 +1,108 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  links: { text: string; href: string }[];
+}
+const { title, subtitle, description, links, image } = Astro.props;
+---
+<div class="wrapper" >
+
+<div class="container">
+  <div class="header">
+    <img src={image} alt="" />
+    <div class="title">
+      <h3>{title}</h3>
+      <p>{subtitle}</p>
+    </div>
+  </div>
+  <div class="details">
+    <p>
+      {description}
+    </p>
+  </div>
+  <div class="footer">
+    {
+      links.map((link) => {
+        return (
+          <a href={link.href} target="_blank">
+            {link.text}
+          </a>
+        );
+      })
+    }
+  </div>
+</div>
+
+</div>
+<style>
+    .wrapper {
+        border-left: solid 1px var(--color);
+        position: relative;
+    }
+    
+    .wrapper::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 16px;
+        width: 10px;
+        height: 10px;
+        background-color: var(--color);
+        border-radius: 50%;
+        transform: translateX(-50%);
+    }
+
+    
+  .container {
+    padding: 0% 2rem;
+    border-radius: 0.8rem;
+    max-width: 600px;
+    margin-inline-start: 1.6rem;
+    color: var(--color);
+    padding-bottom: 60px;
+  }
+
+  .header {
+    display: flex;
+    position: relative;
+  }
+  .header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .header .title {
+    margin-inline-start: 1rem;
+  }
+  .header .title h3,
+  .header .title p {
+    margin: 0;
+    color: var(--color);
+  }
+  .header .title p {
+    color: var(--text-light);
+    font-size: small;
+  }
+
+  .details {
+    color: var(--text-light);
+    position: relative;
+  }
+  .footer {
+    position: relative;
+  }
+  .footer a {
+    color: var(--primary);
+    padding-inline-start: 0;
+    text-decoration: none;
+    margin-inline-end: 1rem;
+  }
+
+  .footer a:hover {
+    opacity: 0.8;
+    transition: 1s;
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Experience from "../components/Card.astro";
+---
+
+<Layout title="Projects - Abdul Wahab">
+  <main>
+    <h2>I've built many sites and apps. Here are a few of them.</h2>
+    <p>
+      Within my journey as a self-taught developer, I have built a variety of
+      real-world inspired projects to strengthen my skills in web and app
+      development. From a flashcards learning app to a Twitter-style social
+      platform, a news aggregation site, and an online books library, I’ve
+      consistently focused on delivering functional and user-friendly
+      applications.
+    </p><p>
+      I primarily work with React Native and Next.js for front-end development,
+      while also integrating APIs, authentication, and databases to build
+      complete solutions. These projects reflect my ability to take an idea from
+      scratch to deployment, applying best practices in modern web development.
+      <br />
+      Here are few of the projects, I have worked on
+    </p>
+
+    <Experience
+      title="Flash"
+      description="Flashcards app for fast learning & memory retention built with React Native. Clean UI, offline support, and daily practice reminders."
+      subtitle="Learn faster, remember longer."
+      links={[
+        {
+          text: "GitHub repo",
+          href: "https://github.com/thewahab07/Flashcards-Mobile",
+        },
+        {
+          text: "Google Play Store",
+          href: "https://play.google.com/store/apps/details?id=com.orion.flash",
+        },
+      ]}
+      image="/images/flash.png"
+    />
+    <Experience
+      title="Twitter Clone"
+      description="Twitter clone — full UI built from scratch, integrated with Twitter Clone API for backend functionality"
+      subtitle="Twitter clone showcasing modern web development."
+      links={[
+        {
+          text: "GitHub repo",
+          href: "https://github.com/thewahab07/Twitter-Clone",
+        },
+      ]}
+      image="/images/twitter.png"
+    />
+  </main>
+</Layout>
+
+<style>
+  p,
+  h2 {
+    color: var(--color);
+  }
+</style>
